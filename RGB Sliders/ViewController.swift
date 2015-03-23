@@ -28,6 +28,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "openColor"){
+            let newViewController = segue.destinationViewController as UIViewController
+            
+            newViewController.view.backgroundColor = colorSquare.backgroundColor
+        }
+    }
 
     @IBAction func updateBackgroundColor() {
         
